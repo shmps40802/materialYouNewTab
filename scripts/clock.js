@@ -66,8 +66,8 @@ function updateDate() {
             cs: `${dayName}, ${dayOfMonth}. ${monthName}`,
             hi: `${dayName}, ${dayOfMonth} ${monthName}`,
             it: `${dayName.substring(0, 3)} ${dayOfMonth} ${monthName.substring(0, 3)}`,
-            ja: `${dayName.substring(0, 1)}, ${monthName}${dayOfMonth}`,
-            ko: `${dayName.substring(0, 1)}, ${monthName} ${dayOfMonth}일`,
+            ja: `${monthName} ${dayOfMonth}日(${dayName.substring(0, 1)})`,
+            ko: `${monthName} ${dayOfMonth}일(${dayName.substring(0, 1)})`,
             pt: `${dayName.substring(0, 3)}, ${dayOfMonth} ${monthName.substring(0, 3)}`,
             ru: `${dayName.substring(0, 2)}, ${dayOfMonth} ${monthName.substring(0, 4)}.`,
             es: `${dayName.substring(0, 3)}, ${dayOfMonth} ${monthName.substring(0, 3)}`,
@@ -192,8 +192,8 @@ function updatedigiClock() {
         zh_TW: `${dayOfMonth}日${dayName}`,
         cs: `${dayName}, ${dayOfMonth}.`,
         hi: `${dayName}, ${dayOfMonth}`,
-        ja: `${dayOfMonth} ${dayName.substring(0, 1)}`,
-        ko: `${dayOfMonth} ${dayName.substring(0, 1)}`,
+        ja: `${dayOfMonth}日 (${dayName[0]})`,
+        ko: `${dayOfMonth}일 (${dayName[0]})`,
         pt: `${dayName}, ${dayOfMonth}`,
         ru: `${dayOfMonth} ${dayName.substring(0, 2)}`,
         vi: `${dayOfMonth} ${dayName}`,
@@ -242,7 +242,8 @@ function updatedigiClock() {
 
     // Manually set the period for special languages if 12-hour format is enabled
     if (hourformat && specialLanguages.includes(currentLanguage)) {
-        period = parseInt(hours, 10) < 12 ? "AM" : "PM";
+        let realHours = new Date().getHours();
+        period = realHours < 12 ? "AM" : "PM";
     }
 
     // Display AM/PM if in 12-hour format
@@ -320,6 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ----------------------- End of clock display -------------------------
 
+// Save and load toggle state
 document.addEventListener("DOMContentLoaded", function () {
     const timeformatField = document.getElementById("timeformatField");
     const hourcheckbox = document.getElementById("12hourcheckbox");

@@ -9,7 +9,7 @@
 // Translation data
 const translations = {
     en: en, // English
-    pt: pt, // Portuguese-BR
+    pt: pt, // Portuguese-BR (Brazil)
     zh: zh, // Chinese (Simplified)
     zh_TW: zh_TW, // Chinese (Traditional)
     hi: hi, // Hindi
@@ -47,7 +47,7 @@ const menuWidths = {
     ru: '400px',
     it: '437px',
     idn: '435px',
-    tr: '418px',
+    tr: '430px',
     fr: '475px',
     az: '418px',
     sl: '470px',
@@ -101,17 +101,21 @@ function applyLanguage(lang) {
         'todoListInfo',
         'fahrenheitCelsiusCheckbox',
         'fahrenheitCelsiusText',
+        'hideWeatherTitle',
+        'hideWeatherInfo',
+        'hideWeatherBox',
+        'hideWeatherBoxInfo',
         'micIconTitle',
         'micIconInfo',
         'hideSearchWith',
         'hideSearchWithInfo',
         'search_suggestions_button',
         'search_suggestions_text',
-        'digitalclocktittle',
+        'digitalclocktitle',
         'digitalclockinfo',
-        'timeformattittle',
+        'timeformattitle',
         'timeformatinfo',
-        'greetingtittle',
+        'greetingtitle',
         'greetinginfo',
         'userTextTitle',
         'userTextInfo',
@@ -127,8 +131,6 @@ function applyLanguage(lang) {
         'saveLoc',
         'WeatherApiText',
         'WeatherApiSubtext',
-        'hideWeatherBox',
-        'hideWeatherBoxInfo',
         'LearnMoreButton',
         'saveAPI',
         'conditionText',

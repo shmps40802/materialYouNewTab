@@ -59,13 +59,7 @@
 	--textColorDark-green: #1b411b;
 	--whitishColor-green: #ffffff;
 
-	/* Cyan */
-	/* --bg-color-cyan: #9bffff;
-    --accentLightTint-cyan: #d5ffff;
-    --darkerColor-cyan: #5E9CA0;
-    --darkColor-cyan: #00CED1;
-    --textColorDark-cyan: #08354B; */
-
+	/* 🌊 Cyan */
 	--bg-color-cyan: #9cefef;
 	--accentLightTint-cyan: #d5ffff;
 	--darkerColor-cyan: #07787f;
@@ -113,22 +107,13 @@
 	--textColorDark-brown: #16100d;
 	--whitishColor-brown: #ffffff;
 
-	/* 🩶🩶🩶 Grey */
-	/* --bg-color-pink: #f9c8d6;
-	--accentLightTint-pink: #ffebf2;
-	--darkerColor-pink: #b24b64;
-	--darkColor-pink: #ec5e78;
-	--textColorDark-pink: #411b28;
-	--whitishColor-pink: #ffffff; */
-
-
-	--bg-color-grey: #ffccbf;
-	--accentLightTint-grey: #fdf1ef;
-	--darkerColor-grey: #f67455;
-	--darkColor-grey: #9c29ba;
-	--textColorDark-grey: #441730;
-	--whitishColor-grey: #ffffff;
-
+	/* 🫶🏻 Peach */
+	--bg-color-peach: #ffccbf;
+	--accentLightTint-peach: #fdf1ef;
+	--darkerColor-peach: #f67455;
+	--darkColor-peach: #9c29ba;
+	--textColorDark-peach: #441730;
+	--whitishColor-peach: #ffffff;
 
 	/* ⚫⚫⚫ */
 	--bg-color-dark: #171615;
@@ -161,10 +146,6 @@
 .bgLightTint {
 	fill: var(--accentLightTint-blue);
 	background-color: var(--accentLightTint-blue);
-}
-
-.strokecolor {
-	stroke: var(--darkColor-blue);
 }
 
 .lessDark {
@@ -204,24 +185,35 @@ body {
 	margin: 0; /* Remove margin to avoid unwanted spacing */
 }
 
-html:has(body[data-bg='color'] .menuBar #enableDarkModeCheckbox:checked):not(:has(#darkTheme:checked))  {
+html:has(body[data-bg="color"] .menuBar #enableDarkModeCheckbox:checked):not(
+		:has(#darkTheme:checked)
+	) {
 	filter: invert(1) hue-rotate(180deg);
 	-webkit-filter: invert(1) hue-rotate(180deg);
-	& #darkTheme, & .favicon {
+	& #darkTheme,
+	& .favicon {
 		filter: invert(1) hue-rotate(180deg);
 		-webkit-filter: invert(1) hue-rotate(180deg);
 	}
-	--whitishColor-blue: #F2F2F2;
+	--whitishColor-blue: #f2f2f2;
 }
 
-body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has(#darkTheme:checked)) > *:not(.menuBar,#bookmarksContainer), body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has(#darkTheme:checked)) :is(.menuCont,.bookmark-sidebar) {
+body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
+		:has(#darkTheme:checked)
+	)
+	> *:not(.menuBar, #bookmarksContainer),
+body[data-bg="wallpaper"]:has(.menuBar #enableDarkModeCheckbox:checked):not(
+		:has(#darkTheme:checked)
+	)
+	:is(.menuCont, .bookmark-sidebar) {
 	filter: invert(1) hue-rotate(180deg);
 	-webkit-filter: invert(1) hue-rotate(180deg);
-	& #darkTheme, & .favicon {
+	& #darkTheme,
+	& .favicon {
 		filter: invert(1) hue-rotate(180deg);
 		-webkit-filter: invert(1) hue-rotate(180deg);
 	}
-	--whitishColor-blue: #F2F2F2;
+	--whitishColor-blue: #f2f2f2;
 }
 
 /* Search suggestions box */
@@ -251,7 +243,9 @@ body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has
 	pointer-events: none;
 }
 
-.centerDiv:has(.resultBox.show) ~ #shortcuts-section, .centerDiv:has(.dropdown-content[style="display: block;"]) ~ #shortcuts-section {
+.centerDiv:has(.resultBox.show) ~ #shortcuts-section,
+.centerDiv:has(.dropdown-content[style="display: block;"])
+	~ #shortcuts-section {
 	z-index: -1;
 }
 
@@ -316,7 +310,7 @@ body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has
 	cursor: pointer;
 }
 
-.theme-transition .dot-icon{
+.theme-transition .dot-icon {
 	transition: fill 0.3s ease;
 }
 
@@ -523,22 +517,22 @@ body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has
 
 .bookmark-button {
 	position: fixed;
-    display: inline-block;
-    margin: 10px;
-    top: var(--gap);
-    right: var(--gap);
-    font-size: 25px;
+	display: inline-block;
+	margin: 10px;
+	top: var(--gap);
+	right: var(--gap);
+	font-size: 25px;
 	background-color: var(--accentLightTint-blue);
-    border: none;
-    cursor: pointer;
-    z-index: 2;
+	border: none;
+	cursor: pointer;
+	z-index: 2;
 	padding: 6px;
 	border-radius: 25%;
 	transition: right 0.3s ease;
 }
 
 .bookmark-button:has(~ .googleAppsCont[style="display: flex;"]) {
-    right: calc(2 * var(--gap) + 36px);
+	right: calc(2 * var(--gap) + 36px);
 }
 
 /* Show tooltip on hover */
@@ -567,7 +561,7 @@ body[data-bg='wallpaper']:has(.menuBar #enableDarkModeCheckbox:checked):not(:has
 	box-sizing: border-box;
 }
 
-.bookmark-sidebar .topOutRoundCorner{
+.bookmark-sidebar .topOutRoundCorner {
 	position: absolute;
 	width: 30px;
 	height: 30px;
@@ -617,16 +611,16 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .bookmark-search-container::after {
-	content: '';
-	background: url('./svgs/bookmarksSearch.svg') no-repeat center / contain;
+	content: "";
+	background: url("./svgs/bookmarksSearch.svg") no-repeat center / contain;
 	width: 18px;
-    filter: invert(1);
-    height: 18px;
-    opacity: 0.5;
-    left: 9%;
-    top: calc(50% + 7px);
-    transform: translateY(-50%);
-    position: absolute;
+	filter: invert(1);
+	height: 18px;
+	opacity: 0.5;
+	left: 9%;
+	top: calc(50% + 7px);
+	transform: translateY(-50%);
+	position: absolute;
 }
 
 #bookmarkSearch {
@@ -663,7 +657,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	margin: 0;
 	text-align: left;
 	height: calc(100% - 230px);
-	overflow-y: auto;  /* Add vertical scrollbar */
+	overflow-y: auto; /* Add vertical scrollbar */
 	overflow-x: hidden;
 }
 
@@ -717,8 +711,12 @@ body #bookmarkButton.bookmark-button.rotate {
 	margin-left: 10px;
 	cursor: pointer;
 }
-.bookmark-view-as-container #bookmarkGridCheckbox:is(:checked) ~ #bookmarkViewGrid,
-.bookmark-view-as-container #bookmarkGridCheckbox:is(:not(:checked)) ~ #bookmarkViewList {
+.bookmark-view-as-container
+	#bookmarkGridCheckbox:is(:checked)
+	~ #bookmarkViewGrid,
+.bookmark-view-as-container
+	#bookmarkGridCheckbox:is(:not(:checked))
+	~ #bookmarkViewList {
 	background: var(--darkColor-blue);
 	color: white;
 }
@@ -729,7 +727,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	font-weight: normal;
 }
 
-#bookmarkList .folder ul{
+#bookmarkList .folder ul {
 	padding-top: 10px;
 }
 
@@ -747,7 +745,8 @@ body #bookmarkButton.bookmark-button.rotate {
 	width: calc(100% - 10px);
 }
 
-#bookmarkList:is(.grid-view) ul:not(.hidden), #bookmarkList:is(.grid-view) .folder.open > ul {
+#bookmarkList:is(.grid-view) ul:not(.hidden),
+#bookmarkList:is(.grid-view) .folder.open > ul {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 
@@ -763,31 +762,32 @@ body #bookmarkButton.bookmark-button.rotate {
 
 #bookmarkList:is(.grid-view) li a {
 	padding: 2px;
-    flex-direction: column;
+	flex-direction: column;
 }
 #bookmarkList:is(.grid-view) li a .favicon {
 	margin: 20px auto 24px auto;
 }
-#bookmarkList:is(.grid-view) li a:has(.favicon)::after, #bookmarkList:is(.grid-view) li a:has(.favicon)::before {
-	content: '';
-    background: var(--bg-color-blue);
-    position: absolute;
-    width: 48px;
-    height: 48px;
+#bookmarkList:is(.grid-view) li a:has(.favicon)::after,
+#bookmarkList:is(.grid-view) li a:has(.favicon)::before {
+	content: "";
+	background: var(--bg-color-blue);
+	position: absolute;
+	width: 48px;
+	height: 48px;
 	z-index: -1;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0.35;
-    top: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.35;
+	top: 12px;
 	box-sizing: border-box;
 	border-radius: 32px;
 }
 #bookmarkList:is(.grid-view) li a:has(.favicon)::before {
-    background: var(--bg-color-blue);
-    width: 36px;
-    height: 36px;
-    opacity: 1;
-    top: 18px;
+	background: var(--bg-color-blue);
+	width: 36px;
+	height: 36px;
+	opacity: 1;
+	top: 18px;
 }
 
 #bookmarkList li a {
@@ -813,7 +813,6 @@ body #bookmarkButton.bookmark-button.rotate {
 #bookmarkList:is(.grid-view) li a span {
 	text-align: center;
 }
-
 
 .favicon {
 	width: 18px;
@@ -856,7 +855,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	display: block;
 }
 
-#bookmarkList:is(.grid-view)  .bookmark-delete-button {
+#bookmarkList:is(.grid-view) .bookmark-delete-button {
 	top: 12px;
 	right: 6px;
 }
@@ -972,7 +971,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .theme-transition #todoAdd {
-    transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 #todoInput {
@@ -1002,7 +1001,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	width: 100%;
 }
 
-.todolist{
+.todolist {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -1011,7 +1010,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	align-items: flex-start;
 }
 
-.todolistitem{
+.todolistitem {
 	width: 100%;
 	display: flex;
 	background-color: var(--darkColor-blue);
@@ -1026,13 +1025,14 @@ body #bookmarkButton.bookmark-button.rotate {
 	word-break: break-word;
 }
 
-.todolistitem::before{
-	content: '';
+.todolistitem::before {
+	content: "";
 	position: absolute;
 	height: 18px;
 	width: 18px;
 	border-radius: 50%;
-	background: url('./svgs/todo-check-stroke.svg') no-repeat center center / contain;
+	background: url("./svgs/todo-check-stroke.svg") no-repeat center center /
+		contain;
 	top: 50%;
 	transform: translateY(-50%);
 	left: 8px;
@@ -1040,16 +1040,17 @@ body #bookmarkButton.bookmark-button.rotate {
 	user-select: none;
 }
 
-.todolistitem.checked::before{
-	background-image: url('./svgs/todo-check-fill.svg');
+.todolistitem.checked::before {
+	background-image: url("./svgs/todo-check-fill.svg");
 }
 
-.todolistitem.checked{
-	color: #CCC;
+.todolistitem.checked {
+	color: #ccc;
 	text-decoration: line-through;
 }
 
-.todolistitem .todoremovebtn, .todolistitem .todopinbtn {
+.todolistitem .todoremovebtn,
+.todolistitem .todopinbtn {
 	position: absolute;
 	right: 6px;
 	top: 50%;
@@ -1075,11 +1076,12 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .todolistitem .todopinbtn {
 	right: 28px;
-	background: url('./svgs/todo-pin-stroke.svg') no-repeat center center / contain;
+	background: url("./svgs/todo-pin-stroke.svg") no-repeat center center /
+		contain;
 }
 
 .todolistitem.pinned .todopinbtn {
-	background-image: url('./svgs/todo-pin-fill.svg');
+	background-image: url("./svgs/todo-pin-fill.svg");
 }
 
 .todolistitem:first-child {
@@ -1552,7 +1554,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .theme-transition .micIcon {
-    transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 .micIcon::after {
@@ -1622,7 +1624,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .theme-transition #enterBtn {
-    transition: all 0.3s;
+	transition: all 0.3s;
 }
 
 /* ________________End of Searchbar______________________ */
@@ -1676,7 +1678,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	cursor: pointer;
 }
 
-.searchEnginesContainer .search-engine svg{
+.searchEnginesContainer .search-engine svg {
 	width: 30px;
 	height: 30px;
 	background-color: var(--darkColor-blue);
@@ -1711,7 +1713,7 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .theme-transition .search-engine input[type="radio"] {
-    transition: 0.2s;
+	transition: 0.2s;
 }
 
 /* -----------end of Radio Button Customizing------------ */
@@ -1825,6 +1827,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	transform: translateX(-50%);
 	/* Center horizontally */
 	margin: auto;
+	min-width: 30px;
 	width: fit-content;
 	text-align: center;
 	color: var(--textColorDark-blue);
@@ -1832,6 +1835,9 @@ body #bookmarkButton.bookmark-button.rotate {
 	transition: all 0.3s;
 	font-size: 1rem;
 	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 120px;
 }
 
 .shortcuts:hover .shortcut-name {
@@ -1889,11 +1895,11 @@ body #bookmarkButton.bookmark-button.rotate {
 	margin: auto;
 	display: flex;
 
-    max-width: calc(100% - 140px);
-    overflow-x: scroll;
+	max-width: calc(100% - 140px);
+	overflow-x: scroll;
 	overflow-y: hidden;
 	scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+	-ms-overflow-style: none; /* IE and Edge */
 }
 .aiToolsCont::-webkit-scrollbar {
 	display: none; /* Chrome, Safari, Edge, Opera */
@@ -2333,6 +2339,14 @@ input:checked + .toggle:before {
 	gap: 24px;
 }
 
+#resetButton,
+#newShortcutButton {
+	fill: var(--textColorDark-blue);
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
 #newShortcutButton svg {
 	transition: transform 0.3s ease;
 }
@@ -2344,14 +2358,6 @@ input:checked + .toggle:before {
 .rotateResetButton {
 	transform: rotate(-360deg);
 	transition: transform 0.3s ease;
-}
-
-#resetButton,
-#newShortcutButton {
-	fill: var(--textColorDark-blue);
-	border: none;
-	background: none;
-	cursor: pointer;
 }
 
 #newShortcutButton.inactive {
@@ -2369,35 +2375,43 @@ input:checked + .toggle:before {
 #editShortcutsListInfo {
 	font-size: 0.8rem;
 	margin-top: 5px;
-	margin-bottom: var(--gap);
+	margin-bottom: 25px;
 	text-align: justify;
+	font-style: italic;
 }
 
 .shortcutSettingsEntry {
 	width: 100%;
 	display: flex;
-	height: 50px;
+	height: 68px;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: 16px;
+	background-color: var(--bg-color-blue);
+	border-radius: 13px;
+	padding: 15px 10px 15px 15px;
+}
+
+.shortcutSettingsEntry:last-child {
+	margin-bottom: 0;
 }
 
 .shortcutSettingsEntry input {
-	width: calc(100% - var(--gap));
+	width: 95%;
 	background: none;
 	border: none;
 }
 
 .shortcutSettingsEntry .shortcutName {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	color: var(--textColorDark-blue);
 	text-overflow: ellipsis;
 }
 
 .shortcutSettingsEntry .URL {
-	font-size: 0.9rem;
+	font-size: 0.84rem;
 	color: var(--textColorDark-blue);
-	opacity: 0.86;
+	opacity: 0.9;
 	margin-top: -3px;
 	text-overflow: ellipsis;
 }
@@ -2407,11 +2421,11 @@ input:checked + .toggle:before {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 60px;
-	height: 34px;
-	background: var(--bg-color-blue);
+	width: 46px;
+	height: 46px;
+	background: rgba(255, 255, 255, 0.4);
 	border: none;
-	border-radius: 34px;
+	border-radius: 7px;
 	cursor: pointer;
 	transition: 0.3s all;
 }
@@ -2460,7 +2474,7 @@ input:checked + .toggle:before {
 /* ---------------Menu-bar-css---------------- */
 
 /* --------------Theming stuff------------------ */
-.themingStuff{
+.themingStuff {
 	margin-top: 11px;
 	position: relative;
 	width: 100%;
@@ -2604,8 +2618,8 @@ input:checked + .toggle:before {
 	background-color: #9e9e9e;
 }
 
-.colorsContainer input[value="grey"] {
-	background: linear-gradient(45deg,#bb4dee, #f8b880);
+.colorsContainer input[value="peach"] {
+	background: linear-gradient(45deg, #bb4dee, #f8b880);
 }
 
 .colorsContainer input[value="dark"] {
@@ -2766,26 +2780,26 @@ input:checked + .toggle:before {
 } */
 
 /* <!-- ----Color Picker || ColorPicker---- --> */
-#colorPicker{
+#colorPicker {
 	display: none;
 }
-.colorPickerLabel{
+.colorPickerLabel {
 	grid-column: span 3;
-    width: 100%;
-    background: var(--accentLightTint-blue);
-    height: 100%;
-    border-radius: 100px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    line-height: 35px;
+	width: 100%;
+	background: var(--accentLightTint-blue);
+	height: 100%;
+	border-radius: 100px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	font-size: 0.8rem;
+	line-height: 35px;
 	cursor: pointer;
 	border: 2px solid transparent;
 	transition: background-color 0.3s ease;
 }
-.colorPickerLabel:hover{
-    background: var(--bg-color-blue);
+.colorPickerLabel:hover {
+	background: var(--bg-color-blue);
 }
 /* <!-- ----End of Color Picker || ColorPicker---- --> */
 
@@ -2800,9 +2814,7 @@ input:checked + .toggle:before {
 	background-color: var(--accentLightTint-blue);
 	border-radius: 50%;
 	border: 6px solid var(--accentLightTint-blue);
-	box-shadow:
-		/* inset 0 0 0 6px var(--accentLightTint-blue), */
-		inset 0 0 0 4px var(--darkColor-blue),
+	box-shadow: inset 0 0 0 4px var(--darkColor-blue),
 		inset 0 0 0 9.7px var(--accentLightTint-blue),
 		inset 0 0 0 40px var(--darkColor-blue);
 	cursor: pointer;
@@ -3027,7 +3039,7 @@ input:checked + .toggle:before {
 	}
 
 	.ttteexxtt {
-    position: absolute;
+		position: absolute;
 		/* background-color: yellow; */
 		height: fit-content;
 		width: fit-content;
@@ -3077,7 +3089,8 @@ input:checked + .toggle:before {
 	#shortcuts-section .wrapper {
 		width: 100%;
 	}
-	#shortcuts-section:has(~ .menuBar #shortcut_switchcheckbox:checked) .shortcutsContainer {
+	#shortcuts-section:has(~ .menuBar #shortcut_switchcheckbox:checked)
+		.shortcutsContainer {
 		margin-top: 0;
 		flex-wrap: nowrap;
 	}
@@ -3121,11 +3134,11 @@ input:checked + .toggle:before {
 	}
 	.searchbar {
 		width: 94vw;
-        transform-origin: top left;
-        scale: 2;
-        margin-top: -1rem;
-        margin-left: calc(320px - 94vw);
-        margin-bottom: 3rem;
+		transform-origin: top left;
+		scale: 2;
+		margin-top: -1rem;
+		margin-left: calc(320px - 94vw);
+		margin-bottom: 3rem;
 
 		& #searchQ {
 			min-width: 0px;
@@ -3177,14 +3190,14 @@ input:checked + .toggle:before {
 	}
 	.leftDiv {
 		width: calc(100vw / 0.5);
-        top: 0;
-        scale: 0.5;
-        transform-origin: left bottom;
-        /* margin-top: -84%; */
+		top: 0;
+		scale: 0.5;
+		transform-origin: left bottom;
+		/* margin-top: -84%; */
 		height: 50vw;
 		margin-left: calc(100vw);
 		align-items: end;
-        justify-content: flex-start;
+		justify-content: flex-start;
 	}
 	.clock .centerPoint {
 		width: calc(20% / 3);
@@ -3206,12 +3219,14 @@ input:checked + .toggle:before {
 		height: auto;
 		top: calc(-160% / 7);
 	}
-	#minute::after, #hour::after {
+	#minute::after,
+	#hour::after {
 		width: 100%;
 		aspect-ratio: 0.5;
 		height: auto;
 	}
-	#analogClock, #digitalClock {
+	#analogClock,
+	#digitalClock {
 		width: 45%;
 		margin-left: 5%;
 		aspect-ratio: 1;
@@ -3220,11 +3235,11 @@ input:checked + .toggle:before {
 	.rightDiv {
 		scale: 0.5;
 		margin-top: -64px;
-        margin-bottom: -32px;
+		margin-bottom: -32px;
 		display: flex;
 		flex-direction: column-reverse;
 
-		& .topDiv{
+		& .topDiv {
 			top: 80px;
 			position: relative;
 			scale: 1.5;
@@ -3233,14 +3248,14 @@ input:checked + .toggle:before {
 
 			& .rAndakar {
 				animation: none;
-                position: absolute;
-                /* display: none; */
-                width: 45%;
-                aspect-ratio: 1;
-                height: auto;
-                bottom: 20rem;
-                /* scale: 1.2; */
-                transform-origin: center;
+				position: absolute;
+				/* display: none; */
+				width: 45%;
+				aspect-ratio: 1;
+				height: auto;
+				bottom: 20rem;
+				/* scale: 1.2; */
+				transform-origin: center;
 			}
 		}
 		#temp {
@@ -3273,7 +3288,7 @@ input:checked + .toggle:before {
 			scale: 0.8;
 		}
 	}
-	.centerDiv:has(~ .menuBar #hideWeatherCheckbox:checked) .topDiv .lrectangle  {
+	.centerDiv:has(~ .menuBar #hideWeatherCard:checked) .topDiv .lrectangle {
 		display: none;
 	}
 	.centerDiv {
@@ -3300,9 +3315,14 @@ input:checked + .toggle:before {
 	.shortcutsContainer[style="display: none;"] {
 		display: flex !important;
 	}
-	.hangno:has(+ :is(.toolsCont[style="display: flex; opacity: 1; transform: translateX(0px); gap: 12px;"], .toolsCont[style="display: flex; opacity: 0; transform: translateX(-100%); gap: 0px;"])) {
+	.hangno:has(
+			+ :is(
+					.toolsCont[style="display: flex; opacity: 1; transform: translateX(0px); gap: 12px;"],
+					.toolsCont[style="display: flex; opacity: 0; transform: translateX(-100%); gap: 0px;"]
+				)
+		) {
 		& .icon {
-			margin: 0
+			margin: 0;
 		}
 		& .label {
 			width: 0;
@@ -3337,3 +3357,272 @@ input:checked + .toggle:before {
 		bottom: -32px;
 	}
 }
+
+/* ------------------- Dark(Black) theme ------------------- */
+.dark-theme .search-engine input[type="radio"]:checked {
+	background-color: #2a2a2a;
+	border: 2px solid #919191;
+}
+
+.dark-theme .search-engine input[type="radio"] {
+	background-color: #9d9d9d;
+	border: 0px solid #000000;
+}
+
+.dark-theme .colorsContainer {
+	background-color: #212121;
+}
+
+.dark-theme #themeButton {
+	background-color: #212121;
+}
+
+.dark-theme #themeIconSvg,
+.dark-theme #languageSelectorIconSvg {
+	fill: #cdcdcd !important;
+}
+
+.dark-theme .languageIcon,
+.dark-theme .languageSelector {
+	background-color: #212121;
+	scrollbar-color: var(--darkerColor-blue) transparent;
+}
+
+.dark-theme .languageSelector::-webkit-scrollbar-thumb,
+.dark-theme .languageSelector::-webkit-scrollbar-thumb:hover {
+	background-color: var(--darkerColor-blue);
+}
+
+.dark-theme .bottom a {
+	color: #a1a1a1;
+}
+
+.dark-theme .ttcont input {
+	background-color: #212121 !important;
+}
+
+.dark-theme input:checked + .toggle {
+	background-color: #aaaaaa;
+}
+
+.dark-theme .tilesCont .tiles {
+	color: #e8e8e8;
+}
+
+.dark-theme .resetbtn:hover {
+	background-color: var(--bg-color-dark);
+}
+
+.dark-theme .resetbtn:active {
+	background-color: #4e4e4e;
+}
+
+.dark-theme .savebtn:hover {
+	background-color: var(--bg-color-dark);
+}
+
+.dark-theme .tiles:hover {
+	background-color: var(--bg-color-dark);
+}
+
+.dark-theme .bottom a:hover {
+	color: var(--darkerColor-blue);
+}
+
+.dark-theme #searchQ {
+	color: #fff;
+}
+
+.dark-theme .searchbar.active {
+	outline: 2px solid #696969;
+}
+
+.dark-theme #searchIconDark {
+	fill: #bbb !important;
+}
+
+.dark-theme .dropdown-item.selected:not(*[data-default]):before {
+	background-color: #707070;
+}
+
+.dark-theme .tilesContainer .tiles {
+	background-color: #212121;
+}
+
+.dark-theme #darkFeelsLikeIcon {
+	fill: #fff !important;
+}
+
+.dark-theme .humidityBar .thinLine {
+	background-color: #aaaaaa;
+}
+
+.dark-theme .search-engine .darkIconForDarkTheme,
+.dark-theme .aiDarkIcons {
+	fill: #bbbbbb !important;
+}
+
+.dark-theme .divider {
+	background-color: #cdcdcd;
+}
+
+.dark-theme .shorcutDarkColor {
+	fill: #3c3c3c !important;
+}
+
+.dark-theme #darkLightTint {
+	fill: #bfbfbf;
+}
+
+.dark-theme .shortcutsContainer .shortcuts .shortcutLogoContainer {
+	background: radial-gradient(circle, #bfbfbf 66%, transparent 66%);
+	&:not(:has(svg)) {
+		background: var(--accentLightTint-blue);
+	}
+}
+
+.dark-theme .digiclock {
+	fill: #909090;
+}
+
+.dark-theme .uploadButton,
+.dark-theme .randomButton {
+	background-color: var(--darkColor-blue);
+	color: var(--whitishColor-dark);
+}
+
+.dark-theme .clearButton {
+	color: #d6d6d6;
+}
+
+.dark-theme .clearButton:hover {
+	background-color: var(--whitishColor-dark);
+	color: var(--darkColor-dark);
+}
+
+.dark-theme .clearButton:active {
+	color: #000000;
+}
+
+.dark-theme .backupRestoreBtn {
+	background-color: var(--darkColor-dark);
+}
+
+.dark-theme .backupRestoreBtn:hover,
+.dark-theme .uploadButton:hover,
+.dark-theme .randomButton:hover,
+.dark-theme #todoAdd:hover {
+	background-color: var(--bg-color-dark);
+}
+
+.dark-theme .uploadButton:active,
+.dark-theme .randomButton:active,
+.dark-theme .backupRestoreBtn:active,
+.dark-theme .resetbtn:active {
+	background-color: #0e0e0e;
+}
+
+.dark-theme .todolistitem .todoremovebtn {
+	color: #616161;
+}
+
+.dark-theme .todolistitem .todoremovebtn:hover {
+	color: #888888;
+}
+
+.dark-theme .bookmark-view-as-container .bookmark-view-as-button {
+	color: var(--textColorDark-blue) !important;
+}
+
+.dark-theme #bookmarkSearch {
+	background-color: #212121 !important;
+}
+
+.dark-theme .bookmark-search-container::after {
+	filter: none;
+}
+
+.dark-theme .bookmark-button svg {
+	fill: var(--textColorDark-blue);
+}
+
+.dark-theme #bookmarkList:is(.grid-view) li a:has(.favicon)::after,
+.dark-theme #bookmarkList:is(.grid-view) li a:has(.favicon)::before {
+	background: var(--darkColor-dark);
+}
+
+.dark-theme .favicon {
+	filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.dark-theme .micIcon {
+	background-color: var(--whitishColor-dark);
+}
+
+.dark-theme #minute,
+.dark-theme #minute::after,
+.dark-theme #second::after {
+	background-color: #909090;
+}
+
+.dark-theme .dot-icon {
+	fill: #bfbfbf;
+}
+
+.dark-theme .menuicon {
+	color: #c2c2c2;
+}
+
+.dark-theme #menuButton {
+	border: 6px solid var(--accentLightTint-blue);
+	box-shadow: inset 0 0 0 4px #858585,
+		inset 0 0 0 9.7px var(--accentLightTint-blue), inset 0 0 0 40px #bfbfbf;
+}
+
+.dark-theme #menuCloseButton,
+.dark-theme #menuCloseButton:hover {
+	background-color: var(--darkColor-dark);
+}
+
+.dark-theme #menuCloseButton .icon {
+	background: radial-gradient(#cdcdcd 66%, transparent 66%);
+}
+
+.dark-theme #closeBtnX {
+	border: 2px solid #bdbdbd;
+	border-radius: 100px;
+}
+
+.dark-theme body {
+	background-color: #000000;
+}
+
+.dark-theme #aiIcon {
+	fill: #c2c2c2 !important;
+}
+
+.dark-theme .tempUnit {
+	color: #dadada;
+}
+
+.dark-theme #githab,
+.dark-theme #sujhaw {
+	fill: #b1b1b1;
+}
+
+.dark-theme .resultItem.active {
+	background-color: var(--darkColor-dark);
+}
+
+.dark-theme .shortcutSettingsEntry {
+	background-color: #171615;
+}
+
+.dark-theme .delete button {
+	background: #232221;
+}
+
+.dark-theme .delete button:hover {
+	background: #404040;
+}
+/* ---------------- End of Dark(Black) theme ---------------- */
